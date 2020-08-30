@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-md p-0 bg-danger navbar-dark">
+    <a class="navbar-brand mx-5" href="/"><%= project %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item bg-warning">
+              <a class="nav-link text-light" href="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/register">Enregistrement</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="/security">Securite</a>
+            </li>
+            <li class="nav-item text-light">
+              <a class="nav-link disabled" href="#">Parametre</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid bg-warning">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-md-8 col-lg-8 col-sm-12">
+                <h3 class="display-4">Images</h3>
+            </div>
+            <div class="col-md-4 col-lg-4 text-white col-sm-12">
+                <h4 class="text-center">Bienvenue a <%= project %>, l'orphelinat de la ville de Goma</h4>
+                <p class="text-center">
+                    Dieu donnee tout au moment opportin
+                </p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <img src="./images/use/users.png" alt="users connection" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 p-2">
+                <h2 class="text-center">Les nombres de enfants que nous avons <span class="badge badge-danger">234</span></h2>
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Age</th>
+                                <th>Niveau</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Olive</td>
+                                <td>23</td>
+                                <td>secondaire</td>
+                                <td>
+                                    <div class="delete btn-group">
+                                        <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td>Olive</td>
+                                <td>23</td>
+                                <td>secondaire</td>
+                                <td>
+                                    <div class="delete btn-group">
+                                        <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td>Olive</td>
+                                <td>23</td>
+                                <td>secondaire</td>
+                                <td>
+                                    <div class="delete btn-group">
+                                        <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td>Olive</td>
+                                <td>23</td>
+                                <td>secondaire</td>
+                                <td>
+                                    <div class="delete btn-group">
+                                        <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#list" class="btn btn-sm btn-danger">Voir plus</a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2 class="display-1">images</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="display-4">Securite</h2>
+    </div>
+</div>

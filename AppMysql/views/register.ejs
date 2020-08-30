@@ -1,0 +1,169 @@
+<nav class="navbar navbar-expand-md fixed-top p-0 bg-danger navbar-dark">
+    <a class="navbar-brand mx-5" href="/"><%= project %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item bg-warning">
+              <a class="nav-link text-light" href="/register">Enregistrement</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="/security">Securite</a>
+            </li>
+            <li class="nav-item text-light">
+              <a class="nav-link disabled" href="#">Parametre</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid bg-warning">
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-md-4 col-lg-4 col-sm-12 pt-5">
+                <a href="/personnelle" class="btn shadow btn-danger my-5">personnelle</a>
+                <img src="./images/special/part.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <form action="/register" method="post">
+                    <div class="form-row">
+                        <div class="col-md-6 col-sm-12 p-1">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h3 class="text-danger">Infos sur l'enfant</h3>
+                                                                        
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="name">Nom de l'enfant</label>
+                                            <input type="text" name="name" id="name"  value="<%= typeof name != 'undefined' ? name: '' %>" placeholder="Entre le nom de l'enfant" class=" shadow form-control">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="provinance">provinance</label>
+                                            <input type="text" name="provinance" id="provinance"  value="<%= typeof provinance != 'undefined' ? provinance: '' %>" placeholder="Provinance" class=" shadow form-control">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="age">Age</label>
+                                            <input type="number" class="form-control shadow" name="age" id="age"  value="<%= typeof age != 'undefined' ? age: '' %>" placeholder="Entre l'age">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="dob">Date de naissance</label>
+                                            <input type="date" class="form-control shadow"   value="<%= typeof dob != 'undefined' ? dob: '' %>" name="dob" id="dob" placeholder="Date de naissance">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="gender">Sexe</label>
+                                            <select class="form-control" name="gender" id="gender">
+                                                <option>-- Selection --</option>
+                                                <option value="Masculin">Masculin</option>
+                                                <option value="Feminin">Feminin</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="niveau">Niveau d'etude</label>
+                                            <select class="form-control" name="niveau" id="niveau">
+                                                <option>-- Selection --</option>
+                                                <option value="aucune">aucune</option>
+                                                <option value="Mternelle">Maternelle</option>
+                                                <option value="primaire">primaire</option>
+                                                <option value="secondaire">secondaire</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-1 col-md-6 col-lg-6 col-sm-12">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <h4 class="text-danger">la personne qui l'amene</h4>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="name_giving">Nom</label>
+                                            <input type="text" name="name_giving" id="name_giving"  value="<%= typeof name_giving != 'undefined' ? name_giving: '' %>" placeholder="Entre le nom..." class="form-control shadow">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="parente">Degree de parent</label>
+                                            <input type="text" name="parente" id="parente"  value="<%= typeof parente != 'undefined' ? parente: '' %>" placeholder="Parente" class="form-control shadow">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="profession">Profession</label>
+                                            <input type="text" name="profession" id="profession"  value="<%= typeof profession != 'undefined' ? profession: '' %>" placeholder="Profession" class="form-control shadow">
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-12">
+                                            <label for="phone">Telephone</label>
+                                            <input type="tel" name="phone" id="phone"  value="<%= typeof phone != 'undefined' ? phone: '' %>" placeholder="+243976353543" class="form-control shadow">
+                                        </div>
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="motif">Motif</label>
+                                            <textarea name="motif" id="motif" placeholder="Motif de son veni ici" value="<%= typeof motif != 'undefined' ? motif: '' %>" class="shadow p-1 form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="text-danger">Info sur Les Parents</h3>
+                                    <div class="form-row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="nameF">Nom du pere</label>
+                                                    <input type="text" name="nameF" id="nameF" placeholder="Nom du pere" class="form-control shadow">
+                                                </div>
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="Fphone">Telephone du pere</label>
+                                                    <input type="tel" name="Fphone" id="Fphone" placeholder="+243976353543" class="form-control shadow">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-row p-0">
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="Fprofession">Profession</label>
+                                                    <input type="text" name="Fprofession" id="Fprofession" placeholder="Professsion" class="form-control shadow">
+                                                </div>
+                                                <div class="form-group col-sm-12 col-md-6">
+                                                    <label for="Fage">Age</label>
+                                                    <input type="number" name="Fage" id="Fage" placeholder="Age" class="form-control shadow">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="nameM">Nom de mere</label>
+                                                    <input type="text" name="nameM" id="nameF" placeholder="Nom de la mere" class="form-control shadow">
+                                                </div>
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="Fphone">Telephone du pere</label>
+                                                    <input type="tel" name="Fphone" id="Fphone" placeholder="+243976353543" class="form-control shadow">
+                                                </div>
+                                            </div>
+                                            <div class="form-row p-0">
+                                                <div class="form-group col-md-6 col-sm-12">
+                                                    <label for="Mprofession">Profession</label>
+                                                    <input type="text" name="Mprofession" id="Mprofession" placeholder="Professsion" class="form-control">
+                                                </div>
+                                                <div class="form-group col-sm-12 col-md-6">
+                                                    <label for="Mage">Age</label>
+                                                    <input type="number" name="Mage" id="Mage" placeholder="Age" class="form-control shadow">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger shadow">Enregistrement <i class="fa fa-database"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

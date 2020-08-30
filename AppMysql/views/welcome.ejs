@@ -1,0 +1,116 @@
+<div class="container-fluid bg-white m-0">
+    <div class="row bg-warning">
+        <div class="container py-5">
+            <div class="text-center">
+                <h3 class=" display-3 text-white">Bienvenu a <%= project %></h3>
+                <p class="text-white">
+                    Vous desire voir les enfants,les adopte, ou soit les aide et bien plus  vous et la bienvenu chez nous!!!
+                </p>
+                <a href="/login" class="btn shadow btn-danger">Se connecter</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-5 p-5">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h2 class="display-4 text-center">Contact nous</h2>
+                <p class="text-center">
+                    Nous avons besoin de vont reaction appelle nous au <%= numero %> ou soit faite un email
+                </p>
+            </div>
+            <div class="col-md-7 col-sm-12 col-lg-7">
+                <img src="./images/special/part.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-5 col-lg-5 col-sm-12">
+                <%- include ('./includes/message') %>
+                <form action="/request" method="post">
+                    <div class="form-group">
+                        <label for="email">Email ou Telephone</label>
+                        <input type="text" name="email" value="<%= typeof email != 'undefined' ? email: '' %>" id="email" placeholder="Email ou numero de telephone" class="form-control shadow">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message"  value="<%= typeof message != 'undefined' ? message: '' %>" placeholder="Ecrit nous...." class="shadow form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-md btn-danger">Envoie</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-warning">
+        <div class="container p-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8 col-sm-12">
+                    <h2 class="text-centre text-white"><%= project %></h2>
+                    <p class="text-justify text-white">
+                        Nous avons plus de 1000 enfants orphelin, nourit, vetu, scolarise par le fond de <%= project %>... Nous desirons votre aide pour ces enfants, pour un congo meilleur qu'aujourd'hui
+                    </p>
+                    <p class="text-white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolore officiis minus laboriosam repellendus, a odit voluptatem eligendi, quidem similique dolorum iusto porro. Accusantium ut ipsa placeat consequatur, eos possimus!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-secondary">
+        <div class="container">
+            <div class="row p-5">
+                <div class="col-md-5 col-sm-12 pt-5 text-white">
+                    <h2 class="text-center">Nos partainers</h2>
+                    <p>
+                        Les partainers que vous voile sont des personnes ou entreprise qui nous dans la securite, la sante et plus... tout ce que nous avons a leur dire ce merci pour leur travail, leur sacrifice pour ce qu'ils font
+                    </p>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="container-fluid m-0">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 p-1">
+                                <div class="card">
+                                    <img src="./images/special/404.jpg" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <p>Mercy corps</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 p-1">
+                                <div class="card">
+                                    <img src="./images/special/404.jpg" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <p>Save children</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 p-1">
+                                <div class="card">
+                                    <img src="./images/special/404.jpg" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <p>Save children</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 p-1">
+                                <div class="card">
+                                    <img src="./images/special/404.jpg" alt="" class="card-img-top">
+                                    <div class="card-body">
+                                        <p>Save children</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-dark">
+        <div class="container p-5">
+            <div class="text-center text-white">
+                <p>
+                    copyright <%= project %> 2020 <%= title %>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

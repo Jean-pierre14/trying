@@ -1,0 +1,29 @@
+<div class="container-fluid bg-warning" style="min-height: 100vh">
+    <div class="row justify-content-center">
+        <div class="col-md-3 mt-5 col-sm-12 col-lg-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="text-danger text-center">Se connecter</h3>
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" placeholder="email@example.com" class="form-control shadow">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Mot de passe</label>
+                            <input type="password" name="password" id="pass" placeholder="Mot de passe *******" class="form-control shadow">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="shadow btn btn-danger">Se Connecte</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card mt-4 shadow">
+                <div class="card-body">
+                    <p class="text-center">Je n'ai pas un <a href="/">compte!!!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysqli crud</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <script src="/assets/js/jquery-3.4.0.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="/save" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email@example.com" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="phone number" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-success">Register <i class="fa fa-arrow-circle-right"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <h3 class="text-center text-uppercase">List of Users</h3>
+                <table class="table table-dark table-hover table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Email </th>
+                            <th> Phone </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach( function(user) { %>
+                            <tr>
+                                <td> <%= user.name %> </td>
+                                <td> <%= user.email %> </td>
+                                <td> <%= user.phone_no %> </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <a href="/" class="btn btn-sm btn-danger">Back <i class="fa fa-arrow-circle-left"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>

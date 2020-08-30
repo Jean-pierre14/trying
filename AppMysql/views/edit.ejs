@@ -1,0 +1,128 @@
+
+<nav class="navbar navbar-expand-md fixed-top p-0 bg-danger navbar-dark">
+    <a class="navbar-brand mx-5" href="/"><%= project %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item bg-warning">
+              <a class="nav-link text-light" href="/register">Enregistrement</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="/security">Securite</a>
+            </li>
+            <li class="nav-item text-light">
+              <a class="nav-link disabled" href="#">Parametre</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid bg-warning">
+    <div class="container py-5">
+      <a href="/personnelle" class="btn shadow btn-sm btn-danger">Enregistre l'enfant</a>
+        <div class="row bg-light my-5">
+            <div class="col-md-6 p-2">
+                <form action="/search" method="post">
+                  <div class="form-inline">
+                    <input type="search" placeholder="Recherche" name="search" class="form-control">
+                    <button type="submit" class="btn btn-danger">Recherche <i class="fa fa-search"></i></button>
+                  </div>
+                </form>
+                <div class="table-resposive my-2">
+                  <table class="table table-striped table-hover table-sm">
+                    <thead>
+                      <tr style="font-size: 14px;">
+                        <th>nom d'utilisateur</th>
+                        <th>nom complet</th>
+                        <th>Email address</th>
+                        <!-- <th>Address</th> -->
+                        <!-- <th>Sexe</th> -->
+                        <!-- <th>Status</th> -->
+                        <th>Post</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size: 14px;">
+                      
+                      <% results.forEach( (result) => { %>
+                        <tr>
+                          <td> <%= result.username %> </td>
+                          <td> <%= result.fullname %> </td>
+                          <td> <%= result.email %> </td>
+                          <td> <%= result.post %> </td>
+                          <td>
+                            <div class="btn-group delete">
+                              <a href="/edit/<%= result.id %>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                            <a href="/personnelle/delete/<%= result.id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                            </div>
+                          </td>
+                        </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+                <a href="/personnelle" class="btn shadow">Retour</a>
+            </div>
+            <div class="col-md-6">
+              <%- include('./includes/message') %>
+                <form action="/personnelle" method="post">
+                  <div class="form-row">
+                    <div class="form-group col-md-6 col-sm-12">
+                      <label for="username">Nom d'utilisateur</label>
+                      <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" value="<%= typeof username != 'undefined' ? username: '' %>" class="form-control shadow">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12">
+                      <label for="fullname">Nom complet</label>
+                      <input type="text" name="fullname" id="fullname" placeholder="Nom complet"   value="<%= typeof fullname != 'undefined' ? fullname: '' %>" class="form-control shadow">
+                    </div>
+                    <div class="form-group col-md-7 col-sm-12">
+                      <label for="fullname">Nom complet</label>
+                      <input type="email" name="email" id="email" placeholder="example@goma.cd"   value="<%= typeof email != 'undefined' ? email: '' %>" class="form-control shadow">
+                    </div>
+                    <div class="form-group col-md-5 col-sm-12">
+                      <label for="address">Address</label>
+                      <input type="text" name="address" id="address" placeholder="Address"   value="<%= typeof address != 'undefined' ? address: '' %>" class="form-control shadow">
+                    </div>
+                    <div class="form-group col-md-4 col-sm-12">
+                      <label for="sexe">Sexe</label>
+                      <select name="sexe" id="sexe" class="form-control">
+                        <option>--selection--</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">Feminin</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-12">
+                      <label for="status">Status</label>
+                      <select name="status" id="status" class="form-control">
+                        <option>--selection--</option>
+                        <option value="Celibataire">Celibataire</option>
+                        <option value="Fiance">Fiance</option>
+                        <option value="Mariee">Mariee</option>
+                        <option value="Divorce">Divorce</option>
+                        <option value="Veuf/veuve">Veuf/veuve</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-12">
+                      <label for="post">POST</label>
+                      <select name="post" id="post" class="form-control">
+                        <option>--selection--</option>
+                        <option value="Directeur">Directeur</option>
+                        <option value="Comptable">Comptable</option>
+                        <option value="Surveillant">Surveillant</option>
+                        <option value="Ouvrielle">Ouvrielle</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-danger shadow">Enregistre <i class="fa fa-database"></i></button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
