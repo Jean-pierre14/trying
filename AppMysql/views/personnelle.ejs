@@ -1,3 +1,4 @@
+<%- include('./includes/header') %>
 <nav class="navbar navbar-expand-md fixed-top p-0 bg-danger navbar-dark">
     <a class="navbar-brand mx-5" href="/"><%= project %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,8 +24,8 @@
 </nav>
 <div class="container-fluid bg-warning">
     <div class="container py-5">
-      <a href="/personnelle" class="btn shadow btn-sm btn-danger">Enregistre l'enfant</a>
-        <div class="row bg-light my-5">
+      <a href="/register" class="btn shadow btn-sm btn-danger">Enregistre l'enfant</a>
+        <div class="row bg-light my-5 shadow">
             <div class="col-md-6 p-2">
                 <form action="/search" method="post">
                   <div class="form-inline">
@@ -57,7 +58,7 @@
                           <td>
                             <div class="btn-group delete">
                               <a href="/edit/<%= result.id %>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                            <a href="/personnelle/delete/<%= result.id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                            <a href="/delete/<%= result.id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                             </div>
                           </td>
                         </tr>
@@ -112,7 +113,7 @@
                         <option value="Directeur">Directeur</option>
                         <option value="Comptable">Comptable</option>
                         <option value="Surveillant">Surveillant</option>
-                        <option value="Ouvrielle">Ouvrielle</option>
+                        <option value="Ouvrielle">Ouvrier</option>
                       </select>
                     </div>
                   </div>
@@ -124,3 +125,4 @@
         </div>
     </div>
 </div>
+<%- include('./includes/footer') %>

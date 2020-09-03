@@ -303,3 +303,9 @@ body {
 table tbody tr:hover .delete{
     opacity: 1;
 }
+
+.box-dashboard{
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+}

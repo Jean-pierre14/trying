@@ -20,20 +20,27 @@ CREATE TABLE `personnelle` (
 PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 CREATE TABLE orphelin(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100), 
-    age INT, 
-    provinance  VARCHAR(100), 
-    niveau_d_etude VARCHAR(100), 
-    personne_qui_l_amene VARCHAR(100), 
-    parente VARCHAR(100), 
-    nom_du_pere VARCHAR(100),
-    Fage INT, 
-    phone VARCHAR(100), 
-    profession VARCHAR(100), 
-    nom_de_la_mere VARCHAR(100),
-    Mage INT, 
-    phone  VARCHAR(100), 
-    profession VARCHAR(100)    
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(100), 
+    `age` INT,
+    `date_of_birth` DATE,
+    `sexe` VARCHAR(50),
+    `provinance`  VARCHAR(100), 
+    `niveau_d_etude` VARCHAR(100), 
+    `nom_du_donnateur` VARCHAR(100), 
+    `parente` VARCHAR(100),
+    `profession` VARCHAR(100),
+    `phone` VARCHAR(255), 
+    `motif` TEXT,
+    `nom_du_pere` VARCHAR(100),
+    `Fage` INT, 
+    `Fphone` VARCHAR(100), 
+    `Fprofession` VARCHAR(100), 
+    `nom_de_la_mere` VARCHAR(100),
+    `Mage` INT, 
+    `Mphone`  VARCHAR(100), 
+    `Mprofession` VARCHAR(100),
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP  
 );
+-- 
 

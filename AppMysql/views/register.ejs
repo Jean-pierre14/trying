@@ -1,3 +1,4 @@
+<%- include('./includes/header') %>
 <nav class="navbar navbar-expand-md fixed-top p-0 bg-danger navbar-dark">
     <a class="navbar-brand mx-5" href="/"><%= project %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -29,6 +30,7 @@
                 <img src="./images/special/part.jpg" alt="" class="img-fluid">
             </div>
             <div class="col-md-8 col-sm-12">
+                <%- include('./includes/message') %>
                 <form action="/register" method="post">
                     <div class="form-row">
                         <div class="col-md-6 col-sm-12 p-1">
@@ -167,3 +169,4 @@
         </div>
     </div>
 </div>
+<%- include('./includes/footer') %>

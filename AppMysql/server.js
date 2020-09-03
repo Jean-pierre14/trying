@@ -1,6 +1,6 @@
 const express = require('express')
 const { success, error } = require('consola')
-const expEjsLayouts = require('express-ejs-layouts')
+// const expEjsLayouts = require('express-ejs-layouts')
 const flash = require('connect-flash')
 const session = require('express-session')
 const bodyParser = require('body-parser')
@@ -15,7 +15,7 @@ const project = 'Don Bosco Ngangi'
 app.use(express.static('public'))
 
 // Engine Template
-app.use(expEjsLayouts)
+// app.use(expEjsLayouts)
 app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

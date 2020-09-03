@@ -1,4 +1,4 @@
-
+<%- include('./includes/header') %>
 <nav class="navbar navbar-expand-md fixed-top p-0 bg-danger navbar-dark">
     <a class="navbar-brand mx-5" href="/"><%= project %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -39,12 +39,10 @@
                       <tr style="font-size: 14px;">
                         <th>nom d'utilisateur</th>
                         <th>nom complet</th>
-                        <th>Email address</th>
+                        <th>Sexe</th>
                         <!-- <th>Address</th> -->
-                        <!-- <th>Sexe</th> -->
                         <!-- <th>Status</th> -->
-                        <th>Post</th>
-                        <th></th>
+                        <th>Status</th>
                       </tr>
                     </thead>
                     <tbody style="font-size: 14px;">
@@ -53,8 +51,9 @@
                         <tr>
                           <td> <%= result.username %> </td>
                           <td> <%= result.fullname %> </td>
-                          <td> <%= result.email %> </td>
-                          <td> <%= result.post %> </td>
+                          <td> <%= result.sexe %> </td>
+                          <!-- <td> <%= result.address %> </td> -->
+                          <td> <%= result.status %> </td>
                           <td>
                             <div class="btn-group delete">
                               <a href="/edit/<%= result.id %>" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
@@ -66,32 +65,35 @@
                     </tbody>
                   </table>
                 </div>
-                <a href="/personnelle" class="btn shadow">Retour</a>
+                <a href="/personnelle" class="btn shadow btn-danger btn-sm">Retour</a>
             </div>
             <div class="col-md-6">
               <%- include('./includes/message') %>
-                <form action="/personnelle" method="post">
+              <% result.forEach(function(user) { %>
+                <h3 class="text-center text-white text-shadow mt-2 bg-danger"><%= user.fullname %></h3>
+                <form action="/update" method="post">
+                  <input type="hidden" name="id" value="<%= user.id %>" class="form-control">
                   <div class="form-row">
                     <div class="form-group col-md-6 col-sm-12">
                       <label for="username">Nom d'utilisateur</label>
-                      <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" value="<%= typeof username != 'undefined' ? username: '' %>" class="form-control shadow">
+                      <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" value="<%= user.username %>" class="form-control shadow">
                     </div>
                     <div class="form-group col-md-6 col-sm-12">
                       <label for="fullname">Nom complet</label>
-                      <input type="text" name="fullname" id="fullname" placeholder="Nom complet"   value="<%= typeof fullname != 'undefined' ? fullname: '' %>" class="form-control shadow">
+                      <input type="text" name="fullname" id="fullname" placeholder="Nom complet" value="<%= user.fullname %>" class="form-control shadow">
                     </div>
                     <div class="form-group col-md-7 col-sm-12">
                       <label for="fullname">Nom complet</label>
-                      <input type="email" name="email" id="email" placeholder="example@goma.cd"   value="<%= typeof email != 'undefined' ? email: '' %>" class="form-control shadow">
+                      <input type="email" name="email" id="email" placeholder="example@goma.cd" value="<%= user.email %>" class="form-control shadow">
                     </div>
                     <div class="form-group col-md-5 col-sm-12">
                       <label for="address">Address</label>
-                      <input type="text" name="address" id="address" placeholder="Address"   value="<%= typeof address != 'undefined' ? address: '' %>" class="form-control shadow">
+                      <input type="text" name="address" id="address" placeholder="Address" value="<%= user.address %>" class="form-control shadow">
                     </div>
                     <div class="form-group col-md-4 col-sm-12">
                       <label for="sexe">Sexe</label>
                       <select name="sexe" id="sexe" class="form-control">
-                        <option>--selection--</option>
+                        <option></option>
                         <option value="M">Masculin</option>
                         <option value="F">Feminin</option>
                       </select>
@@ -99,7 +101,7 @@
                     <div class="form-group col-md-4 col-sm-12">
                       <label for="status">Status</label>
                       <select name="status" id="status" class="form-control">
-                        <option>--selection--</option>
+                        <option></option>
                         <option value="Celibataire">Celibataire</option>
                         <option value="Fiance">Fiance</option>
                         <option value="Mariee">Mariee</option>
@@ -110,19 +112,40 @@
                     <div class="form-group col-md-4 col-sm-12">
                       <label for="post">POST</label>
                       <select name="post" id="post" class="form-control">
-                        <option>--selection--</option>
+                        <option></option>
                         <option value="Directeur">Directeur</option>
                         <option value="Comptable">Comptable</option>
                         <option value="Surveillant">Surveillant</option>
                         <option value="Ouvrielle">Ouvrielle</option>
                       </select>
                     </div>
+                    <div class="col-md-4">
+                      <label>Sexe</label>
+                      <span class="badge badge-warning text-white">
+                        <%= user.sexe %>
+                      </span>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Status matrimoniale</label>
+                      <span class="badge badge-warning text-white">
+                        <%= user.status %>
+                      </span>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Post</label>
+                      <span class="badge badge-warning text-white">
+                        <%= user.post %>
+                      </span>
+                    </div>
                   </div>
+
                   <div class="form-group">
-                    <button type="submit" class="btn btn-danger shadow">Enregistre <i class="fa fa-database"></i></button>
+                    <button type="submit" class="btn btn-warning text-white shadow">Update <i class="fa fa-database"></i></button>
                   </div>
                 </form>
+              <% }) %>
             </div>
         </div>
     </div>
 </div>
+<%- include('./includes/footer') %>
