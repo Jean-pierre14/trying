@@ -1,3 +1,5 @@
+
+``` sql
 CREATE TABLE `node`.`request` (
     `id` INT(64) NOT NULL AUTO_INCREMENT ,
     `email` VARCHAR(100) NOT NULL ,
