@@ -1,13 +1,13 @@
 const express = require('express')
 const { success, error } = require('consola')
-// const expEjsLayouts = require('express-ejs-layouts')
+    // const expEjsLayouts = require('express-ejs-layouts')
 const flash = require('connect-flash')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const db = require('./config/')
 
 const app = express()
-// Variable globale
+    // Variable globale
 const title = 'Solange Pokea'
 const project = 'Don Bosco Ngangi'
 
@@ -44,7 +44,7 @@ const router = require('./routes/index')
 app.use('/', router)
 
 // Error page
-app.use( async (req, res, next) => {
+app.use(async(req, res, next) => {
     await res.render('error', { title })
     next()
 })
@@ -53,6 +53,6 @@ const PORT = process.env.PORT || 7000
 
 app.listen(PORT, (err) => {
     if (err)
-        errror({message: `Erreur: ${err}`, badge: true})
+        errror({ message: `Erreur: ${err}`, badge: true })
     success({ message: `Server run on port : ${PORT}`, badge: true })
 })
